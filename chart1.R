@@ -1,8 +1,6 @@
 library(tidyverse)
 library(ggplot2)
 
-<<<<<<< HEAD
-=======
 states_all <- read.csv("https://raw.githubusercontent.com/andrewdcse/Exploratory-Analysis-andrewdcse/main/states_all.csv")
 
 states_2015 <- filter(states_all, YEAR == 2015)
@@ -40,4 +38,3 @@ expenditure_score_avg <- ggplot(data=states_2015) + geom_point(mapping = aes(x =
 #       y = "Average 8th Grade Reading Score") +
 #  theme(title=element_text(size=9.8), axis.title = element_text(size = 10))
 
->>>>>>> 3c54020d6de53998e205fdec50a51a8fbcb218e6
