@@ -6,7 +6,7 @@ states_all <- read.csv("https://raw.githubusercontent.com/andrewdcse/Exploratory
 states_2015 <- filter(states_all, YEAR == 2015)
 
 states_2015 <- mutate(na.omit(states_2015), expenditure_per_student = TOTAL_EXPENDITURE / ENROLL, 
-                      avg_score = AVG_MATH_4_SCORE + AVG_MATH_8_SCORE + AVG_READING_4_SCORE + AVG_READING_8_SCORE)
+                      avg_score = (AVG_MATH_4_SCORE + AVG_MATH_8_SCORE + AVG_READING_4_SCORE + AVG_READING_8_SCORE)/4)
 
 expenditure_score_avg <- ggplot(data=states_2015) + geom_point(mapping = aes(x = expenditure_per_student, y = avg_score)) + 
   labs(title = "State Expenditure Per Student versus Average NAEP Score in 2015",
