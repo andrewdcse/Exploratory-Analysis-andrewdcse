@@ -24,19 +24,9 @@ For our final project, we are interesting in investigating datasets that are rel
 
 
 ### Summary
-Within the summary, the values were chosen in order to investigate a correlation with revenue (or funding) with the values, such as test scores, that would reflect quality of education. The statistics we looked at werethe total number of observations present in our data set,the highest total revenue spent on a single state, the highest total expenditure spent on a single state, the total expenditure of the state with the highest 8th grade reading score, and the state with the lowest attendance. 
-```{r}
-#summary
-summary_info
-```
+Within the summary, the values were chosen in order to investigate a correlation with revenue (or funding) with the values, such as test scores, that would reflect quality of education. The statistics we looked at werethe total number of observations present in our data set,the highest total revenue spent on a single state, the highest total expenditure spent on a single state, the total expenditure of the state with the highest 8th grade reading score, and the state with the lowest attendance. Calling upon ``summary_info`` gives us the variables and values.
 
-
-We can see that from our 1715 observations, the largest total revenue is greater than the total expenditure, and that there seems to be funding being used in that state, and that the highest reading score in the 8th grade seems to be paired with a high expenditure of $16201905. The region with the lowest attendance would be the District of Columbia.
-
-
-### Our Table
-table here 
-
+We can see that from our ```r summary_info$num_observation``` observations, the largest total revenue (```r summary_info$max_total_revenue```) is greater than the total expenditure (```r summary_info$max_total_expenditure```), and that there seems to be funding being used in that state, and that the highest reading score in the 8th grade seems to be paired with a high expenditure of ```r summary_info$highest_reading_score_expenditure```. The region with the lowest attendance would be the ```r summary_info$state_lowest_attendance```.
 
 ### Various Charts
 ```{r, echo=FALSE}
@@ -62,3 +52,11 @@ expenditure_breakdown
 
 
 The purpose of this stacked bar chart is to show which parts of education expenditure increased from 2003-2015, with the context of increasing standardized test scores. We can see that the categories that increased the most in spending were instruction and support services, with an larger increase in support services spending lining up with the steep increase in test scores from 2003 to 2009. 
+
+
+
+
+
+### Our Table
+table here 
+
