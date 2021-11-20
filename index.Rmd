@@ -1,0 +1,42 @@
+---
+title: "index"
+output: html_document 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include = FALSE}
+source("chart1.R")
+source("chart2.R")
+source("chart3.R")
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+```
+
+### Introduction
+For our final project, we are interesting in investigating datasets that are related to education in the United States. We chose to work with these topics because we realize that there are many disparities in quality of education between different areas and communities throughout the US and we think that it would be valuable to draw correlations between factors - and possibly figure out if certain connected factors cause these disparities. The dataset that we are using comes from Roy Garrard, from the website [Kaggle.com](http://Kaggle.com), and includes data such as Revenue, Academic Achievement, and Enrollment, which is also broken down further into race and gender. Titled **U.S. Education Datasets: Unification Project,** the data is aggregated from multiple .gov sites, such as The Nation's Report Card, The US Census Bureau, and the National Center for Education Statistics.
+
+### Summary
+Within the summary, the values were chosen in order to investigate a correlation with revenue (or funding) with the values, such as test scores, that would reflect quality of education.
+
+### Our Table
+
+### Various Charts
+```{r, echo=FALSE}
+#first chart
+expenditure_score_avg
+```
+
+```{r, echo=FALSE}
+#second chart
+scores_expenditure_time
+```
+
+
+```{r, echo=FALSE}
+#third chart
+expenditure_breakdown
+```
