@@ -11,9 +11,24 @@ states_table <- states_all %>%
           AVG_READING_4_SCORE, AVG_READING_8_SCORE, AVG_MATH_4_SCORE, AVG_MATH_8_SCORE)
 # renaming a column to clarify the column
 states_table <- rename(states_table, "ALL_STUDENTS" = "GRADES_ALL_G")
+
+# --- group_by ---
+
+#Using group_by to calculate average and max revenue by year
+
+year_group <- group_by(states_table, YEAR)
+summarise(year_group, rmax = max(na.omit(TOTAL_REVENUE)))
+summarise(year_group, rmeam = mean(na.omit(TOTAL_REVENUE)))
+
+#Using group_by to calculate average, max and min expenditure by state
   
+states_group <- group_by(states_table, STATE)
+summarise(states_group, rmean = mean(na.omit(TOTAL_EXPENDITURE)))
+summarise(states_group, rmax = max(na.omit(TOTAL_EXPENDITURE)))
+summarise(states_group, rmin = min(na.omit(TOTAL_EXPENDITURE)))
 
-
+dgroup <- group_by(states_group, TOTAL_EXPENDITURE < 10000000)
+summarise(dgroup, drmean = mean(na.omit(TOTAL_EXPENDITURE)))
 
 
 ##Why did you include the table? 
