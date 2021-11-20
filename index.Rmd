@@ -30,9 +30,10 @@ Within the summary, the values were chosen in order to investigate a correlation
 expenditure_score_avg
 ```
 
+
 ```{r, echo=FALSE}
 #second chart
-scores_expenditure_time
+scores_expenditure_time <-  grid.arrange(expenditure_time, scores_time, ncol=2)
 ```
 
 
