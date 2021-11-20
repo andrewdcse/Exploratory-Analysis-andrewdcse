@@ -1,0 +1,64 @@
+---
+title: "index"
+output: html_document 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include = FALSE}
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+library(knitr)
+source("summary_information_script.R")
+source("chart1.R")
+source("chart2.R")
+source("chart3.R")
+
+```
+
+### Introduction
+For our final project, we are interesting in investigating datasets that are related to education in the United States. We chose to work with these topics because we realize that there are many disparities in quality of education between different areas and communities throughout the US and we think that it would be valuable to draw correlations between factors - and possibly figure out if certain connected factors cause these disparities. The dataset that we are using comes from Roy Garrard, from the website [Kaggle.com](https://www.kaggle.com/noriuk/us-education-datasets-unification-project), and includes data such as Revenue, Academic Achievement, and Enrollment, which is also broken down further into race and gender. Titled **U.S. Education Datasets: Unification Project**, the data is aggregated from multiple .gov sites, such as The Nation's Report Card, The US Census Bureau, and the National Center for Education Statistics.
+
+
+### Summary
+Within the summary, the values were chosen in order to investigate a correlation with revenue (or funding) with the values, such as test scores, that would reflect quality of education. The statistics we looked at werethe total number of observations present in our data set,the highest total revenue spent on a single state, the highest total expenditure spent on a single state, the total expenditure of the state with the highest 8th grade reading score, and the state with the lowest attendance. 
+```{r}
+#summary
+summary_info
+```
+
+
+We can see that from our 1715 observations, the largest total revenue is greater than the total expenditure, and that there seems to be funding being used in that state, and that the highest reading score in the 8th grade seems to be paired with a high expenditure of $16201905. The region with the lowest attendance would be the District of Columbia.
+
+
+### Our Table
+table here 
+
+
+### Various Charts
+```{r, echo=FALSE}
+#first chart
+expenditure_score_avg
+```
+
+
+This chart was created in order to show the relationship between state expenditure per student and average national test scores in math and reading. We see through our visualization that, although there seems to be a vague positive correlation between the expenditure and test scores, there correlation itself is not extremely strong and there are many outliers.
+
+```{r, echo=FALSE}
+#second chart
+scores_expenditure_time <-  grid.arrange(expenditure_time, scores_time, ncol=2)
+```
+
+
+This visualization was made to juxtapose the increase in average per-student expenditure and standardized test scores over time from 2003 to 2015. When comparing the two, the upward trends in expenditure and test scores seem to be extremely similar.
+
+```{r, echo=FALSE}
+#third chart
+expenditure_breakdown
+```
+
+
+The purpose of this stacked bar chart is to show which parts of education expenditure increased from 2003-2015, with the context of increasing standardized test scores. We can see that the categories that increased the most in spending were instruction and support services, with an larger increase in support services spending lining up with the steep increase in test scores from 2003 to 2009. 
