@@ -12,6 +12,7 @@ states_table <- states_all %>%
 # renaming a column to clarify the column
 states_table <- rename(states_table, "ALL_STUDENTS" = "GRADES_ALL_G")
 
+
 # --- group_by ---
 
 #Using group_by to calculate average and max revenue by year
